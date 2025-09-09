@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { LongevityReport as LongevityReportType } from '../services/gemini';
+import { LongevityReport as LongevityReportType } from '../services/gemini.ts';
 
 interface LongevityReportProps {
     report: LongevityReportType;

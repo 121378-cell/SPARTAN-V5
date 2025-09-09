@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { generateLongevityReport, LongevityProfile, LongevityReport } from '../services/gemini';
-import { Spinner } from './Spinner';
+import { generateLongevityReport, LongevityProfile, LongevityReport } from '../services/gemini.ts';
+import { Spinner } from './Spinner.tsx';
 
 interface LongevityOnboardingProps {
     onReportGenerated: (report: LongevityReport) => void;

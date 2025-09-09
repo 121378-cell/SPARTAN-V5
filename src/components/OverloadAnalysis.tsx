@@ -1,5 +1,5 @@
 import React from 'react';
-import { OverloadAnalysis as OverloadAnalysisType } from '../services/gemini';
+import { OverloadAnalysis as OverloadAnalysisType } from '../services/gemini.ts';
 
 interface OverloadAnalysisProps {
     analysis: OverloadAnalysisType;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { AuthProvider, useAuth } from './src/context/AuthContext';
-import { Login } from './src/components/Login';
-import { Dashboard } from './src/components/Dashboard';
-import { isFirebaseConfigured } from './src/services/firebase';
-import { FirebaseNotConfigured } from './src/components/FirebaseNotConfigured';
+import { AuthProvider, useAuth } from './src/context/AuthContext.tsx';
+import { Login } from './src/components/Login.tsx';
+import { Dashboard } from './src/components/Dashboard.tsx';
+import { isFirebaseConfigured } from './src/services/firebase.ts';
+import { FirebaseNotConfigured } from './src/components/FirebaseNotConfigured.tsx';
 
 const AppContent = () => {
   const { currentUser } = useAuth();

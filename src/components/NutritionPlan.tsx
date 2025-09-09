@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { NutritionPlan as NutritionPlanType, Meal, Recipe as RecipeType, generateRecipe } from '../services/gemini';
-import { RecipeModal } from './RecipeModal';
+import { NutritionPlan as NutritionPlanType, Meal, Recipe as RecipeType, generateRecipe } from '../services/gemini.ts';
+import { RecipeModal } from './RecipeModal.tsx';
 
 interface NutritionPlanProps {
     plan: NutritionPlanType;

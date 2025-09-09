@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { generateCircadianPlan, CircadianProfile, CircadianPlan } from '../services/gemini';
-import { Spinner } from './Spinner';
+import { generateCircadianPlan, CircadianProfile, CircadianPlan } from '../services/gemini.ts';
+import { Spinner } from './Spinner.tsx';
 
 interface CircadianOnboardingProps {
     onPlanGenerated: (plan: CircadianPlan) => void;

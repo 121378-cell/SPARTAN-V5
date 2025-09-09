@@ -1,7 +1,7 @@
 // Implemented the Onboarding component to resolve module errors.
 import React, { useState } from 'react';
-import { generateWorkoutPlan, UserProfile, WorkoutPlan } from '../services/gemini';
-import { Spinner } from './Spinner';
+import { generateWorkoutPlan, UserProfile, WorkoutPlan } from '../services/gemini.ts';
+import { Spinner } from './Spinner.tsx';
 
 interface OnboardingProps {
     onPlanGenerated: (plan: WorkoutPlan) => void;

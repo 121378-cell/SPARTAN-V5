@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { generateOverloadAnalysis, OverloadProfile, OverloadAnalysis } from '../services/gemini';
-import { Spinner } from './Spinner';
+import { generateOverloadAnalysis, OverloadProfile, OverloadAnalysis } from '../services/gemini.ts';
+import { Spinner } from './Spinner.tsx';
 
 interface OverloadOnboardingProps {
     onAnalysisGenerated: (analysis: OverloadAnalysis) => void;

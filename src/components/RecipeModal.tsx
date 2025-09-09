@@ -1,6 +1,6 @@
 import React from 'react';
-import { Recipe } from '../services/gemini';
-import { Spinner } from './Spinner';
+import { Recipe } from '../services/gemini.ts';
+import { Spinner } from './Spinner.tsx';
 
 interface RecipeModalProps {
     recipe: Recipe | null;

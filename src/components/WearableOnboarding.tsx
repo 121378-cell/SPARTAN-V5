@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { generateWearableInsights, WearableData, WearableInsights } from '../services/gemini';
-import { Spinner } from './Spinner';
+import { generateWearableInsights, WearableData, WearableInsights } from '../services/gemini.ts';
+import { Spinner } from './Spinner.tsx';
 
 interface WearableOnboardingProps {
     onInsightsGenerated: (insights: WearableInsights) => void;

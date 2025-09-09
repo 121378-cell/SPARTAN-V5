@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { generateNutritionPlan, NutritionProfile, NutritionPlan } from '../services/gemini';
-import { Spinner } from './Spinner';
+import { generateNutritionPlan, NutritionProfile, NutritionPlan } from '../services/gemini.ts';
+import { Spinner } from './Spinner.tsx';
 
 interface NutritionOnboardingProps {
     onPlanGenerated: (plan: NutritionPlan) => void;

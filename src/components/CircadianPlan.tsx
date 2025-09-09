@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircadianPlan as CircadianPlanType } from '../services/gemini';
+import { CircadianPlan as CircadianPlanType } from '../services/gemini.ts';
 
 interface CircadianPlanProps {
     plan: CircadianPlanType;

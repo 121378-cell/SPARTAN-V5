@@ -1,5 +1,5 @@
 import React from 'react';
-import { WearableInsights as WearableInsightsType } from '../services/gemini';
+import { WearableInsights as WearableInsightsType } from '../services/gemini.ts';
 
 interface WearableInsightsProps {
     insights: WearableInsightsType;

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { Onboarding } from './Onboarding';
-import { WorkoutPlan as WorkoutPlanComponent } from './WorkoutPlan';
-import { NutritionOnboarding } from './NutritionOnboarding';
-import { NutritionPlan as NutritionPlanComponent } from './NutritionPlan';
-import { CircadianOnboarding } from './CircadianOnboarding';
-import { CircadianPlan as CircadianPlanComponent } from './CircadianPlan';
-import { WearableOnboarding } from './WearableOnboarding';
-import { WearableInsights as WearableInsightsComponent } from './WearableInsights';
-import { OverloadOnboarding } from './OverloadOnboarding';
-import { OverloadAnalysis as OverloadAnalysisComponent } from './OverloadAnalysis';
-import { LongevityOnboarding } from './LongevityOnboarding';
-import { LongevityReport as LongevityReportComponent } from './LongevityReport';
-import { WorkoutPlan as WorkoutPlanType, NutritionPlan as NutritionPlanType, CircadianPlan as CircadianPlanType, WearableInsights as WearableInsightsType, OverloadAnalysis as OverloadAnalysisType, LongevityReport as LongevityReportType } from '../services/gemini';
+import { useAuth } from '../context/AuthContext.tsx';
+import { Onboarding } from './Onboarding.tsx';
+import { WorkoutPlan as WorkoutPlanComponent } from './WorkoutPlan.tsx';
+import { NutritionOnboarding } from './NutritionOnboarding.tsx';
+import { NutritionPlan as NutritionPlanComponent } from './NutritionPlan.tsx';
+import { CircadianOnboarding } from './CircadianOnboarding.tsx';
+import { CircadianPlan as CircadianPlanComponent } from './CircadianPlan.tsx';
+import { WearableOnboarding } from './WearableOnboarding.tsx';
+import { WearableInsights as WearableInsightsComponent } from './WearableInsights.tsx';
+import { OverloadOnboarding } from './OverloadOnboarding.tsx';
+import { OverloadAnalysis as OverloadAnalysisComponent } from './OverloadAnalysis.tsx';
+import { LongevityOnboarding } from './LongevityOnboarding.tsx';
+import { LongevityReport as LongevityReportComponent } from './LongevityReport.tsx';
+import { WorkoutPlan as WorkoutPlanType, NutritionPlan as NutritionPlanType, CircadianPlan as CircadianPlanType, WearableInsights as WearableInsightsType, OverloadAnalysis as OverloadAnalysisType, LongevityReport as LongevityReportType } from '../services/gemini.ts';
 
 type ActiveView = 'workout' | 'nutrition' | 'circadian' | 'wearable' | 'overload' | 'longevity';
 

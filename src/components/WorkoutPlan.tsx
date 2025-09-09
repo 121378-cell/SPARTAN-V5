@@ -1,6 +1,6 @@
 // Implemented the WorkoutPlan component to resolve module errors.
 import React from 'react';
-import { WorkoutPlan as WorkoutPlanType } from '../services/gemini';
+import { WorkoutPlan as WorkoutPlanType } from '../services/gemini.ts';
 
 interface WorkoutPlanProps {
     plan: WorkoutPlanType;
