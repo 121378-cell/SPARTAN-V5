@@ -1,1 +1,988 @@
-full contents of index.css
+/* Reset and Base Styles */
+:root {
+  --primary-color: #e63946;
+  --primary-hover-color: #d62839;
+  --secondary-color: #457b9d;
+  --background-color: #f1faee;
+  --card-background-color: #ffffff;
+  --text-color: #1d3557;
+  --light-text-color: #a8dadc;
+  --border-color: #e0e0e0;
+  --input-background-color: #f7f7f7;
+  --error-color: #c71f2f;
+  --spinner-color: #e63946;
+  --success-color: #2a9d8f;
+  --warning-color: #f4a261;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Login Component --- */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.login-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 2.5rem;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.login-input-group input {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--input-background-color);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+.login-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: var(--primary-hover-color);
+}
+
+.login-button:disabled {
+  background-color: #fca5ad;
+  cursor: not-allowed;
+}
+
+.login-error {
+  color: var(--error-color);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* --- Spinner Component --- */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--spinner-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+.primary-button .spinner {
+    border-top-color: #fff;
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Dashboard Component --- */
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.dashboard-header h1 {
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logout-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Dashboard Tabs */
+.dashboard-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  position: relative;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  color: var(--primary-color);
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+
+/* --- Onboarding & Forms --- */
+.onboarding-container, .nutrition-onboarding-container, .circadian-onboarding-container, .wearable-onboarding-container, .longevity-onboarding-container {
+  background-color: var(--card-background-color);
+  border-radius: 12px;
+  padding: 2rem 3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.onboarding-container h2, .nutrition-onboarding-container h2, .circadian-onboarding-container h2, .wearable-onboarding-container h2, .longevity-onboarding-container h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.onboarding-container p, .nutrition-onboarding-container p, .circadian-onboarding-container p, .wearable-onboarding-container p, .longevity-onboarding-container p {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+.onboarding-form, .nutrition-form, .circadian-form, .wearable-form, .longevity-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.form-row-tri {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group select, .form-group input {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--input-background-color);
+  width: 100%;
+}
+
+.form-group select:focus, .form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+.form-error {
+  color: var(--error-color);
+  text-align: center;
+}
+
+.primary-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.primary-button:hover:not(:disabled) {
+  background-color: var(--primary-hover-color);
+}
+
+.primary-button:disabled {
+  background-color: #fca5ad;
+  cursor: not-allowed;
+}
+
+/* --- Workout Plan --- */
+.workout-plan-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.plan-header h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.plan-header p {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.secondary-button {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.secondary-button:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.day-card {
+  background-color: var(--card-background-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.day-card h3 {
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.day-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.day-card th, .day-card td {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.day-card thead th {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.day-card tbody tr:nth-child(even) {
+  background-color: var(--input-background-color);
+}
+
+.rest-day {
+  font-style: italic;
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* --- Nutrition Plan --- */
+.nutrition-plan-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.nutrition-summary {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.nutrition-summary h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.macros {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.macro-item span {
+    font-weight: 600;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.nutrition-day-card {
+    background-color: var(--card-background-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.nutrition-day-card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.meal {
+    margin-bottom: 1rem;
+}
+
+.meal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.meal h4 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.meal ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+    color: var(--secondary-color);
+}
+
+.meal li {
+    margin-bottom: 0.25rem;
+}
+
+.tertiary-button {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--light-text-color);
+    color: var(--secondary-color);
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tertiary-button:hover {
+    background-color: var(--light-text-color);
+    color: white;
+}
+
+/* --- Recipe Modal --- */
+.recipe-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s;
+}
+
+.recipe-modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.recipe-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.recipe-modal-close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.recipe-modal-body .spinner {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.recipe-section {
+    margin-bottom: 1.5rem;
+}
+
+.recipe-section h4 {
+    margin: 0 0 0.8rem 0;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.recipe-section ul, .recipe-section ol {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.recipe-section ul li, .recipe-section ol li {
+    margin-bottom: 0.5rem;
+}
+
+.recipe-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+.recipe-section ul li {
+    background-color: var(--input-background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+/* --- Circadian Plan --- */
+.circadian-plan-container {
+    animation: fadeIn 0.5s ease-in-out;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sleep-schedule {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.sleep-schedule h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.sleep-times {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.sleep-times div {
+    font-size: 1.1rem;
+}
+
+.sleep-times span {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.circadian-timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.circadian-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--light-text-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 50px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 3px solid var(--background-color);
+}
+
+.timeline-time {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.sleep-tips {
+    margin-top: 3rem;
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.sleep-tips h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.sleep-tips ul {
+    list-style-type: '✓';
+    padding-left: 25px;
+}
+
+.sleep-tips li {
+    margin-bottom: 0.8rem;
+    padding-left: 10px;
+    line-height: 1.6;
+}
+
+/* --- Wearable Insights --- */
+.wearable-insights-container {
+    animation: fadeIn 0.5s ease-in-out;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.insights-summary {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.insights-summary p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.insight-card {
+    background-color: var(--card-background-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.insight-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.insight-card-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.insight-card-header span { /* Icon */
+    font-size: 1.5rem;
+}
+
+.user-data {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.user-data strong {
+    color: var(--primary-color);
+}
+
+.ai-recommendation {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+/* --- Overload Analysis --- */
+.overload-analysis-container {
+    animation: fadeIn 0.5s ease-in-out;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.analysis-summary {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.risk-level-badge {
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+}
+
+.risk-level-low { background-color: var(--success-color); }
+.risk-level-moderate { background-color: var(--warning-color); }
+.risk-level-high { background-color: var(--error-color); }
+
+.analysis-summary p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    max-width: 600px;
+}
+
+.analysis-section {
+    margin-bottom: 2rem;
+}
+
+.analysis-section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.identified-areas-grid,
+.corrective-actions-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.identified-areas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.corrective-actions-grid {
+    grid-template-columns: 1fr;
+}
+
+.area-card, .action-card {
+    background-color: var(--card-background-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.area-card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.area-card p {
+    margin: 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.action-card-header {
+    margin-bottom: 1rem;
+}
+
+.action-card-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.action-card-type {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background-color: var(--input-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+.action-card p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- Longevity Report --- */
+.longevity-report-container {
+    animation: fadeIn 0.5s ease-in-out;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.report-summary-card {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.longevity-score {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(var(--success-color) 0% var(--score, 0%), var(--input-background-color) var(--score, 0%) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    transition: --score 1s ease-out;
+}
+
+.longevity-score-value {
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+
+.longevity-score-label {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.summary-text p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.metric-card {
+    background-color: var(--card-background-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.metric-card h3 {
+    margin: 0 0 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+}
+
+.metric-card .ai-analysis {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.recommendations-section {
+    background-color: var(--card-background-color);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.recommendations-section h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.recommendations-list {
+    list-style-type: '💡';
+    padding-left: 2rem;
+}
+
+.recommendations-list li {
+    margin-bottom: 1rem;
+    padding-left: 0.8rem;
+    line-height: 1.6;
+}
