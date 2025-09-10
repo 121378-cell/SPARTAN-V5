@@ -38,47 +38,47 @@ export const Onboarding = ({ onPlanGenerated }: OnboardingProps) => {
 
     return (
         <div className="onboarding-container">
-            <h2>Create Your Spartan Plan</h2>
-            <p>Tell us about yourself to generate a personalized workout plan.</p>
+            <h2>Crea tu Plan Espartano</h2>
+            <p>Cuéntanos sobre ti para generar un plan de entrenamiento personalizado.</p>
             <form onSubmit={handleSubmit} className="onboarding-form">
                 <div className="form-group">
-                    <label htmlFor="goal">What is your primary fitness goal?</label>
+                    <label htmlFor="goal">¿Cuál es tu principal objetivo de fitness?</label>
                     <select id="goal" name="goal" value={profile.goal} onChange={handleChange} disabled={loading}>
-                        <option value="build-muscle">Build Muscle</option>
-                        <option value="lose-fat">Lose Fat</option>
-                        <option value="increase-strength">Increase Strength</option>
-                        <option value="improve-endurance">Improve Endurance</option>
+                        <option value="build-muscle">Desarrollar Músculo</option>
+                        <option value="lose-fat">Perder Grasa</option>
+                        <option value="increase-strength">Aumentar Fuerza</option>
+                        <option value="improve-endurance">Mejorar Resistencia</option>
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="level">What is your experience level?</label>
+                    <label htmlFor="level">¿Cuál es tu nivel de experiencia?</label>
                     <select id="level" name="level" value={profile.level} onChange={handleChange} disabled={loading}>
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
+                        <option value="beginner">Principiante</option>
+                        <option value="intermediate">Intermedio</option>
+                        <option value="advanced">Avanzado</option>
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="daysPerWeek">How many days per week can you train?</label>
+                    <label htmlFor="daysPerWeek">¿Cuántos días a la semana puedes entrenar?</label>
                     <select id="daysPerWeek" name="daysPerWeek" value={profile.daysPerWeek} onChange={handleChange} disabled={loading}>
-                        <option value="2">2 days</option>
-                        <option value="3">3 days</option>
-                        <option value="4">4 days</option>
-                        <option value="5">5 days</option>
+                        <option value="2">2 días</option>
+                        <option value="3">3 días</option>
+                        <option value="4">4 días</option>
+                        <option value="5">5 días</option>
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="equipment">What equipment do you have access to?</label>
+                    <label htmlFor="equipment">¿A qué equipo tienes acceso?</label>
                     <select id="equipment" name="equipment" value={profile.equipment} onChange={handleChange} disabled={loading}>
-                        <option value="bodyweight">Bodyweight only</option>
-                        <option value="dumbbells">Dumbbells</option>
-                        <option value="basic-gym">Basic Gym (Dumbbells, Barbells, Racks)</option>
-                        <option value="full-gym">Full Gym (Machines, etc.)</option>
+                        <option value="bodyweight">Solo peso corporal</option>
+                        <option value="dumbbells">Mancuernas</option>
+                        <option value="basic-gym">Gimnasio Básico (Mancuernas, Barras, Racks)</option>
+                        <option value="full-gym">Gimnasio Completo (Máquinas, etc.)</option>
                     </select>
                 </div>
                 {error && <p className="form-error">{error}</p>}
                 <button type="submit" className="primary-button" disabled={loading}>
-                    {loading ? <Spinner /> : 'Generate My Plan'}
+                    {loading ? <Spinner /> : 'Generar Mi Plan'}
                 </button>
             </form>
         </div>

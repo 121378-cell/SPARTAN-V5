@@ -38,22 +38,22 @@ export const OverloadOnboarding = ({ onAnalysisGenerated }: OverloadOnboardingPr
 
     return (
         <div className="onboarding-container">
-            <h2>Analyze Overload & Recovery</h2>
-            <p>Report any fatigue or discomfort to get a personalized recovery and mobility plan.</p>
+            <h2>Analizar Sobrecarga y Recuperación</h2>
+            <p>Informa cualquier fatiga o molestia para obtener un plan personalizado de recuperación y movilidad.</p>
             <form onSubmit={handleSubmit} className="onboarding-form">
                  <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="soreMuscles">Sore muscle groups (comma-separated)</label>
-                        <input type="text" id="soreMuscles" name="soreMuscles" value={profile.soreMuscles} onChange={handleChange} placeholder="e.g., quads, lower back" disabled={loading} />
+                        <label htmlFor="soreMuscles">Grupos musculares adoloridos (separados por comas)</label>
+                        <input type="text" id="soreMuscles" name="soreMuscles" value={profile.soreMuscles} onChange={handleChange} placeholder="ej., cuádriceps, espalda baja" disabled={loading} />
                     </div>
                      <div className="form-group">
-                        <label htmlFor="achyJoints">Achy joints (comma-separated)</label>
-                        <input type="text" id="achyJoints" name="achyJoints" value={profile.achyJoints} onChange={handleChange} placeholder="e.g., knees, shoulders" disabled={loading} />
+                        <label htmlFor="achyJoints">Articulaciones doloridas (separadas por comas)</label>
+                        <input type="text" id="achyJoints" name="achyJoints" value={profile.achyJoints} onChange={handleChange} placeholder="ej., rodillas, hombros" disabled={loading} />
                     </div>
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="sorenessLevel">Overall soreness/discomfort level (1-10)</label>
+                    <label htmlFor="sorenessLevel">Nivel general de dolor/molestia (1-10)</label>
                     <input type="range" id="sorenessLevel" name="sorenessLevel" min="1" max="10" value={profile.sorenessLevel} onChange={handleChange} disabled={loading} />
                     <div style={{ textAlign: 'center', fontWeight: 'bold' }}>{profile.sorenessLevel}</div>
                 </div>
@@ -61,28 +61,28 @@ export const OverloadOnboarding = ({ onAnalysisGenerated }: OverloadOnboardingPr
 
                 <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="discomfortType">Type of Discomfort</label>
+                        <label htmlFor="discomfortType">Tipo de Molestia</label>
                         <select id="discomfortType" name="discomfortType" value={profile.discomfortType} onChange={handleChange} disabled={loading}>
-                            <option value="dull-ache">Dull Ache</option>
-                            <option value="stiffness">Stiffness</option>
-                            <option value="tightness">Tightness</option>
-                            <option value="sharp-pain">Sharp Pain</option>
+                            <option value="dull-ache">Dolor Sordo</option>
+                            <option value="stiffness">Rigidez</option>
+                            <option value="tightness">Tensión</option>
+                            <option value="sharp-pain">Dolor Agudo</option>
                         </select>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="recentIntensity">Recent Training Intensity</label>
+                        <label htmlFor="recentIntensity">Intensidad del Entrenamiento Reciente</label>
                          <select id="recentIntensity" name="recentIntensity" value={profile.recentIntensity} onChange={handleChange} disabled={loading}>
-                            <option value="low">Low</option>
-                            <option value="moderate">Moderate</option>
-                            <option value="high">High</option>
-                            <option value="very-high">Very High / Max Effort</option>
+                            <option value="low">Baja</option>
+                            <option value="moderate">Moderada</option>
+                            <option value="high">Alta</option>
+                            <option value="very-high">Muy Alta / Esfuerzo Máximo</option>
                         </select>
                     </div>
                 </div>
 
                 {error && <p className="form-error">{error}</p>}
                 <button type="submit" className="primary-button" disabled={loading}>
-                    {loading ? <Spinner /> : 'Analyze My Condition'}
+                    {loading ? <Spinner /> : 'Analizar Mi Condición'}
                 </button>
             </form>
         </div>

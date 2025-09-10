@@ -26,11 +26,11 @@ export const Login = () => {
 
   return (
     <div className="login-container">
-      <h1 className="login-title">Spartan AI</h1>
+      <h1 className="login-title">IA Espartana</h1>
       <p className="login-subtitle">Tu entrenador personal definitivo</p>
       <form onSubmit={handleLogin} className="login-form">
         <div className="login-input-group">
-          <label htmlFor="email" className="login-label">Email</label>
+          <label htmlFor="email" className="login-label">Correo Electrónico</label>
           <input
             id="email"
             type="email"

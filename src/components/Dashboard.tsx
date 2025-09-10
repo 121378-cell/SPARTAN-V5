@@ -77,10 +77,10 @@ export const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <header className="dashboard-header">
-                <h1>Spartan AI</h1>
+                <h1>IA Espartana</h1>
                 <div className="user-info">
-                    <span>Welcome, {currentUser?.displayName || currentUser?.email}</span>
-                    <button onClick={logout} className="logout-button">Logout</button>
+                    <span>Bienvenido/a, {currentUser?.displayName || currentUser?.email}</span>
+                    <button onClick={logout} className="logout-button">Cerrar Sesión</button>
                 </div>
             </header>
 
@@ -90,42 +90,42 @@ export const Dashboard = () => {
                     onClick={() => setActiveView('workout')}
                     aria-pressed={activeView === 'workout'}
                 >
-                    Workout Plan
+                    Plan de Entrenamiento
                 </button>
                 <button
                     className={`tab-button ${activeView === 'nutrition' ? 'active' : ''}`}
                     onClick={() => setActiveView('nutrition')}
                     aria-pressed={activeView === 'nutrition'}
                 >
-                    Nutrition Plan
+                    Plan de Nutrición
                 </button>
                 <button
                     className={`tab-button ${activeView === 'circadian' ? 'active' : ''}`}
                     onClick={() => setActiveView('circadian')}
                     aria-pressed={activeView === 'circadian'}
                 >
-                    Circadian Sync
+                    Sincronización Circadiana
                 </button>
                 <button
                     className={`tab-button ${activeView === 'wearable' ? 'active' : ''}`}
                     onClick={() => setActiveView('wearable')}
                     aria-pressed={activeView === 'wearable'}
                 >
-                    Wearable Insights
+                    Análisis de Wearable
                 </button>
                  <button
                     className={`tab-button ${activeView === 'overload' ? 'active' : ''}`}
                     onClick={() => setActiveView('overload')}
                     aria-pressed={activeView === 'overload'}
                 >
-                    Overload Prevention
+                    Prevención de Sobrecarga
                 </button>
                 <button
                     className={`tab-button ${activeView === 'longevity' ? 'active' : ''}`}
                     onClick={() => setActiveView('longevity')}
                     aria-pressed={activeView === 'longevity'}
                 >
-                    Longevity Report
+                    Informe de Longevidad
                 </button>
             </div>
 

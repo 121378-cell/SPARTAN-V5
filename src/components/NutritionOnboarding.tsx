@@ -38,63 +38,63 @@ export const NutritionOnboarding = ({ onPlanGenerated }: NutritionOnboardingProp
 
     return (
         <div className="nutrition-onboarding-container">
-            <h2>Create Your Nutrition Plan</h2>
-            <p>Tell us about your diet to generate a personalized nutrition plan.</p>
+            <h2>Crea tu Plan de Nutrición</h2>
+            <p>Cuéntanos sobre tu dieta para generar un plan de nutrición personalizado.</p>
             <form onSubmit={handleSubmit} className="nutrition-form">
                 <div className="form-group">
-                    <label htmlFor="goal">What is your primary nutrition goal?</label>
+                    <label htmlFor="goal">¿Cuál es tu principal objetivo de nutrición?</label>
                     <select id="goal" name="goal" value={profile.goal} onChange={handleChange} disabled={loading}>
-                        <option value="lose-fat">Lose Fat</option>
-                        <option value="maintain-weight">Maintain Weight</option>
-                        <option value="gain-muscle">Gain Muscle</option>
-                        <option value="improve-performance">Improve Performance</option>
+                        <option value="lose-fat">Perder Grasa</option>
+                        <option value="maintain-weight">Mantener Peso</option>
+                        <option value="gain-muscle">Ganar Músculo</option>
+                        <option value="improve-performance">Mejorar Rendimiento</option>
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="diet">What are your dietary preferences?</label>
+                    <label htmlFor="diet">¿Cuáles son tus preferencias dietéticas?</label>
                     <select id="diet" name="diet" value={profile.diet} onChange={handleChange} disabled={loading}>
-                        <option value="omnivore">Omnivore</option>
-                        <option value="vegetarian">Vegetarian</option>
-                        <option value="vegan">Vegan</option>
-                        <option value="pescatarian">Pescatarian</option>
+                        <option value="omnivore">Omnívoro</option>
+                        <option value="vegetarian">Vegetariano</option>
+                        <option value="vegan">Vegano</option>
+                        <option value="pescatarian">Pescatariano</option>
                     </select>
                 </div>
                  <div className="form-group">
-                    <label htmlFor="mealsPerDay">How many meals do you prefer per day?</label>
+                    <label htmlFor="mealsPerDay">¿Cuántas comidas prefieres al día?</label>
                     <select id="mealsPerDay" name="mealsPerDay" value={profile.mealsPerDay} onChange={handleChange} disabled={loading}>
-                        <option value="3">3 meals</option>
-                        <option value="4">4 meals</option>
-                        <option value="5">5 meals</option>
+                        <option value="3">3 comidas</option>
+                        <option value="4">4 comidas</option>
+                        <option value="5">5 comidas</option>
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="allergies">Allergies or restrictions (comma-separated)</label>
+                    <label htmlFor="allergies">Alergias o restricciones (separadas por comas)</label>
                     <input
                         type="text"
                         id="allergies"
                         name="allergies"
                         value={profile.allergies}
                         onChange={handleChange}
-                        placeholder="e.g., gluten, dairy, nuts"
+                        placeholder="ej., gluten, lácteos, frutos secos"
                         disabled={loading}
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="dislikedFoods">Foods to avoid (comma-separated)</label>
+                    <label htmlFor="dislikedFoods">Alimentos a evitar (separados por comas)</label>
                     <input
                         type="text"
                         id="dislikedFoods"
                         name="dislikedFoods"
                         value={profile.dislikedFoods}
                         onChange={handleChange}
-                        placeholder="e.g., broccoli, tofu"
+                        placeholder="ej., brócoli, tofu"
                         disabled={loading}
                     />
                 </div>
 
                 {error && <p className="form-error">{error}</p>}
                 <button type="submit" className="primary-button" disabled={loading}>
-                    {loading ? <Spinner /> : 'Generate My Nutrition Plan'}
+                    {loading ? <Spinner /> : 'Generar Mi Plan de Nutrición'}
                 </button>
             </form>
         </div>

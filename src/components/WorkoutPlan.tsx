@@ -12,22 +12,22 @@ export const WorkoutPlan = ({ plan, onReset }: WorkoutPlanProps) => {
         <div className="workout-plan-container">
             <div className="plan-header">
                 <h2>{plan.planName}</h2>
-                <p>A {plan.durationWeeks}-week plan to help you achieve your goals.</p>
-                <button onClick={onReset} className="secondary-button">Generate New Plan</button>
+                <p>Un plan de {plan.durationWeeks} semanas para ayudarte a alcanzar tus objetivos.</p>
+                <button onClick={onReset} className="secondary-button">Generar Nuevo Plan</button>
             </div>
 
             <div className="plan-grid">
                 {plan.days.map((day) => (
                     <div key={day.day} className="day-card">
-                        <h3>Day {day.day}: {day.name}</h3>
+                        <h3>Día {day.day}: {day.name}</h3>
                         {day.exercises.length > 0 ? (
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Exercise</th>
-                                        <th>Sets</th>
-                                        <th>Reps</th>
-                                        <th>Rest</th>
+                                        <th>Ejercicio</th>
+                                        <th>Series</th>
+                                        <th>Repeticiones</th>
+                                        <th>Descanso</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,7 +42,7 @@ export const WorkoutPlan = ({ plan, onReset }: WorkoutPlanProps) => {
                                 </tbody>
                             </table>
                         ) : (
-                            <p className="rest-day">Rest Day</p>
+                            <p className="rest-day">Día de Descanso</p>
                         )}
                     </div>
                 ))}

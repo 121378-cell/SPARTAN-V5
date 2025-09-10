@@ -82,28 +82,28 @@ export const FirebaseNotConfigured = () => {
   return (
     <div style={containerStyles}>
       <div style={cardStyles}>
-        <h1 style={titleStyles}>Configuration Required</h1>
+        <h1 style={titleStyles}>Configuración Requerida</h1>
         <p style={subtitleStyles}>
-          To get started, you need to connect the app to your Firebase project.
+          Para comenzar, necesitas conectar la aplicación a tu proyecto de Firebase.
         </p>
 
         <div style={stepsContainerStyles}>
-          <h2 style={stepsHeaderStyles}>Follow these steps:</h2>
+          <h2 style={stepsHeaderStyles}>Sigue estos pasos:</h2>
           <ol style={listStyles}>
             <li>
-              Go to your Firebase project console: <a href="https://console.firebase.google.com/" target="_blank" rel="noopener noreferrer">console.firebase.google.com</a>
+              Ve a la consola de tu proyecto de Firebase: <a href="https://console.firebase.google.com/" target="_blank" rel="noopener noreferrer">console.firebase.google.com</a>
             </li>
             <li>
-              In your project overview, click the <strong>&lt;/&gt;</strong> icon to add a web app or select an existing one.
+              En la descripción general de tu proyecto, haz clic en el ícono <strong>&lt;/&gt;</strong> para agregar una aplicación web o selecciona una existente.
             </li>
             <li>
-              Find your app's configuration keys (apiKey, authDomain, etc.).
+              Encuentra las claves de configuración de tu aplicación (apiKey, authDomain, etc.).
             </li>
             <li>
-              Open the file <code style={codeInlineStyles}>src/services/firebase.ts</code> in your project.
+              Abre el archivo <code style={codeInlineStyles}>src/services/firebase.ts</code> en tu proyecto.
             </li>
             <li>
-              Copy your keys into the <code>firebaseConfig</code> object.
+              Copia tus claves en el objeto <code>firebaseConfig</code>.
             </li>
           </ol>
         </div>
@@ -114,17 +114,17 @@ export const FirebaseNotConfigured = () => {
 {`// src/services/firebase.ts
 
 const firebaseConfig = {
-  apiKey: "REPLACE_WITH_YOUR_API_KEY",
-  authDomain: "REPLACE_WITH_YOUR_AUTH_DOMAIN",
-  projectId: "REPLACE_WITH_YOUR_PROJECT_ID",
-  // ... and so on
+  apiKey: "REEMPLAZA_CON_TU_API_KEY",
+  authDomain: "REEMPLAZA_CON_TU_AUTH_DOMAIN",
+  projectId: "REEMPLAZA_CON_TU_PROJECT_ID",
+  // ... y así sucesivamente
 };`}
             </code>
           </pre>
         </div>
 
         <p style={footerStyles}>
-          After updating the file, save it and refresh this page.
+          Después de actualizar el archivo, guárdalo y actualiza esta página.
         </p>
       </div>
     </div>

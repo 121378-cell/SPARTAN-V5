@@ -41,63 +41,63 @@ export const LongevityOnboarding = ({ onReportGenerated }: LongevityOnboardingPr
 
     return (
         <div className="longevity-onboarding-container">
-            <h2>Generate Weekly Longevity Report</h2>
-            <p>Enter your key metrics from the past week for a detailed health and longevity analysis.</p>
+            <h2>Generar Informe Semanal de Longevidad</h2>
+            <p>Introduce tus métricas clave de la última semana para un análisis detallado de salud y longevidad.</p>
             <form onSubmit={handleSubmit} className="longevity-form">
 
-                <h4>Body Composition</h4>
+                <h4>Composición Corporal</h4>
                 <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="bodyweight">Bodyweight (kg)</label>
+                        <label htmlFor="bodyweight">Peso Corporal (kg)</label>
                         <input type="number" id="bodyweight" name="bodyweight" value={profile.bodyweight} onChange={handleChange} required disabled={loading} />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="bodyFatPercentage">Body Fat % (optional)</label>
+                        <label htmlFor="bodyFatPercentage">% Grasa Corporal (opcional)</label>
                         <input type="number" id="bodyFatPercentage" name="bodyFatPercentage" value={profile.bodyFatPercentage} onChange={handleChange} disabled={loading} />
                     </div>
                 </div>
 
-                <h4>Strength (1-Rep Max in kg)</h4>
+                <h4>Fuerza (1-Rep Max en kg)</h4>
                 <div className="form-row-tri">
                     <div className="form-group">
-                        <label htmlFor="squatMax">Squat</label>
+                        <label htmlFor="squatMax">Sentadilla</label>
                         <input type="number" id="squatMax" name="squatMax" value={profile.squatMax} onChange={handleChange} required disabled={loading} />
                     </div>
                      <div className="form-group">
-                        <label htmlFor="benchMax">Bench Press</label>
+                        <label htmlFor="benchMax">Press de Banca</label>
                         <input type="number" id="benchMax" name="benchMax" value={profile.benchMax} onChange={handleChange} required disabled={loading} />
                     </div>
                      <div className="form-group">
-                        <label htmlFor="deadliftMax">Deadlift</label>
+                        <label htmlFor="deadliftMax">Peso Muerto</label>
                         <input type="number" id="deadliftMax" name="deadliftMax" value={profile.deadliftMax} onChange={handleChange} required disabled={loading} />
                     </div>
                 </div>
 
-                <h4>Sleep & Cardio</h4>
+                <h4>Sueño y Cardio</h4>
                  <div className="form-row">
                     <div className="form-group">
-                        <label htmlFor="avgSleepDuration">Avg. Sleep Duration</label>
-                        <input type="text" id="avgSleepDuration" name="avgSleepDuration" value={profile.avgSleepDuration} onChange={handleChange} placeholder="e.g., 7h 45m" required disabled={loading} />
+                        <label htmlFor="avgSleepDuration">Duración Promedio del Sueño</label>
+                        <input type="text" id="avgSleepDuration" name="avgSleepDuration" value={profile.avgSleepDuration} onChange={handleChange} placeholder="ej., 7h 45m" required disabled={loading} />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="sleepQuality">Subjective Sleep Quality</label>
+                        <label htmlFor="sleepQuality">Calidad de Sueño Subjetiva</label>
                         <select id="sleepQuality" name="sleepQuality" value={profile.sleepQuality} onChange={handleChange} disabled={loading}>
-                            <option value="Excellent">Excellent</option>
-                            <option value="Good">Good</option>
-                            <option value="Fair">Fair</option>
-                            <option value="Poor">Poor</option>
+                            <option value="Excellent">Excelente</option>
+                            <option value="Good">Bueno</option>
+                            <option value="Fair">Regular</option>
+                            <option value="Poor">Pobre</option>
                         </select>
                     </div>
                 </div>
                  <div className="form-group">
-                    <label htmlFor="vo2Max">Estimated VO2 Max (mL/kg/min)</label>
+                    <label htmlFor="vo2Max">VO2 Máx. Estimado (mL/kg/min)</label>
                     <input type="number" id="vo2Max" name="vo2Max" value={profile.vo2Max} onChange={handleChange} required disabled={loading} />
                 </div>
 
 
                 {error && <p className="form-error">{error}</p>}
                 <button type="submit" className="primary-button" disabled={loading}>
-                    {loading ? <Spinner /> : 'Generate My Report'}
+                    {loading ? <Spinner /> : 'Generar Mi Informe'}
                 </button>
             </form>
         </div>

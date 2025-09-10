@@ -21,19 +21,19 @@ export const OverloadAnalysis = ({ analysis, onReset }: OverloadAnalysisProps) =
         <div className="overload-analysis-container">
             <div className="plan-header">
                 <h2>{analysis.analysisTitle}</h2>
-                <button onClick={onReset} className="secondary-button">Generate New Analysis</button>
+                <button onClick={onReset} className="secondary-button">Generar Nuevo Análisis</button>
             </div>
 
             <div className="analysis-summary">
                 <span className={`risk-level-badge ${getRiskLevelClass(analysis.riskLevel)}`}>
-                    Risk Level: {analysis.riskLevel}
+                    Nivel de Riesgo: {analysis.riskLevel}
                 </span>
                 <p>{analysis.summary}</p>
             </div>
 
             {analysis.identifiedAreas.length > 0 && (
                 <div className="analysis-section">
-                    <h3>Identified Areas</h3>
+                    <h3>Áreas Identificadas</h3>
                     <div className="identified-areas-grid">
                         {analysis.identifiedAreas.map((area, index) => (
                             <div key={index} className="area-card">
@@ -46,7 +46,7 @@ export const OverloadAnalysis = ({ analysis, onReset }: OverloadAnalysisProps) =
             )}
 
             <div className="analysis-section">
-                <h3>Corrective Action Plan</h3>
+                <h3>Plan de Acción Correctivo</h3>
                 <div className="corrective-actions-grid">
                     {analysis.correctiveActions.map((action, index) => (
                         <div key={index} className="action-card">

@@ -37,11 +37,11 @@ export const CircadianOnboarding = ({ onPlanGenerated }: CircadianOnboardingProp
 
     return (
         <div className="circadian-onboarding-container">
-            <h2>Sync Your Circadian Rhythm</h2>
-            <p>Optimize your day by aligning your activities with your internal clock.</p>
+            <h2>Sincroniza tu Ritmo Circadiano</h2>
+            <p>Optimiza tu día alineando tus actividades con tu reloj interno.</p>
             <form onSubmit={handleSubmit} className="circadian-form">
                 <div className="form-group">
-                    <label htmlFor="wakeTime">What time do you typically wake up?</label>
+                    <label htmlFor="wakeTime">¿A qué hora te despiertas normalmente?</label>
                     <input
                         type="time"
                         id="wakeTime"
@@ -52,7 +52,7 @@ export const CircadianOnboarding = ({ onPlanGenerated }: CircadianOnboardingProp
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="sleepTime">What time do you typically go to sleep?</label>
+                    <label htmlFor="sleepTime">¿A qué hora te acuestas normalmente?</label>
                      <input
                         type="time"
                         id="sleepTime"
@@ -63,30 +63,30 @@ export const CircadianOnboarding = ({ onPlanGenerated }: CircadianOnboardingProp
                     />
                 </div>
                  <div className="form-group">
-                    <label htmlFor="activityWindow">When are you most active or when do you prefer to work out?</label>
+                    <label htmlFor="activityWindow">¿Cuándo estás más activo o cuándo prefieres entrenar?</label>
                     <select id="activityWindow" name="activityWindow" value={profile.activityWindow} onChange={handleChange} disabled={loading}>
-                        <option value="morning">Morning (6am - 10am)</option>
-                        <option value="mid-day">Mid-day (10am - 2pm)</option>
-                        <option value="afternoon">Afternoon (2pm - 6pm)</option>
-                        <option value="evening">Evening (6pm - 9pm)</option>
+                        <option value="morning">Mañana (6am - 10am)</option>
+                        <option value="mid-day">Mediodía (10am - 2pm)</option>
+                        <option value="afternoon">Tarde (2pm - 6pm)</option>
+                        <option value="evening">Noche (6pm - 9pm)</option>
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="sleepIssues">Do you have any specific sleep challenges? (optional)</label>
+                    <label htmlFor="sleepIssues">¿Tienes algún problema específico de sueño? (opcional)</label>
                     <input
                         type="text"
                         id="sleepIssues"
                         name="sleepIssues"
                         value={profile.sleepIssues}
                         onChange={handleChange}
-                        placeholder="e.g., trouble falling asleep, waking up at night"
+                        placeholder="ej., dificultad para conciliar el sueño, despertarse por la noche"
                         disabled={loading}
                     />
                 </div>
 
                 {error && <p className="form-error">{error}</p>}
                 <button type="submit" className="primary-button" disabled={loading}>
-                    {loading ? <Spinner /> : 'Generate My Circadian Plan'}
+                    {loading ? <Spinner /> : 'Generar Mi Plan Circadiano'}
                 </button>
             </form>
         </div>

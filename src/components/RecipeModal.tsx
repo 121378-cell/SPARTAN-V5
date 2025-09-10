@@ -14,8 +14,8 @@ export const RecipeModal = ({ recipe, loading, error, onClose }: RecipeModalProp
         <div className="recipe-modal-overlay" onClick={onClose}>
             <div className="recipe-modal-content" onClick={(e) => e.stopPropagation()}>
                 <div className="recipe-modal-header">
-                    <h3>{recipe?.recipeName || 'Generating Recipe...'}</h3>
-                    <button onClick={onClose} className="recipe-modal-close-button" aria-label="Close recipe">&times;</button>
+                    <h3>{recipe?.recipeName || 'Generando Receta...'}</h3>
+                    <button onClick={onClose} className="recipe-modal-close-button" aria-label="Cerrar receta">&times;</button>
                 </div>
                 <div className="recipe-modal-body">
                     {loading && <Spinner />}
@@ -23,7 +23,7 @@ export const RecipeModal = ({ recipe, loading, error, onClose }: RecipeModalProp
                     {recipe && !loading && (
                         <>
                             <div className="recipe-section">
-                                <h4>Ingredients</h4>
+                                <h4>Ingredientes</h4>
                                 <ul>
                                     {recipe.ingredients.map((ing, index) => (
                                         <li key={index}>
@@ -33,7 +33,7 @@ export const RecipeModal = ({ recipe, loading, error, onClose }: RecipeModalProp
                                 </ul>
                             </div>
                             <div className="recipe-section">
-                                <h4>Instructions</h4>
+                                <h4>Instrucciones</h4>
                                 <ol>
                                     {recipe.instructions.map((step, index) => (
                                         <li key={index}>{step}</li>
@@ -42,11 +42,11 @@ export const RecipeModal = ({ recipe, loading, error, onClose }: RecipeModalProp
                             </div>
                             {recipe.substitutions && recipe.substitutions.length > 0 && (
                                 <div className="recipe-section">
-                                    <h4>Substitutions</h4>
+                                    <h4>Sustituciones</h4>
                                     <ul>
                                         {recipe.substitutions.map((sub, index) => (
                                             <li key={index}>
-                                                <strong>{sub.original}:</strong> Can be replaced with {sub.substitute}.
+                                                <strong>{sub.original}:</strong> Puede ser reemplazado con {sub.substitute}.
                                             </li>
                                         ))}
                                     </ul>

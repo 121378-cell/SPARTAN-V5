@@ -11,15 +11,15 @@ export const CircadianPlan = ({ plan, onReset }: CircadianPlanProps) => {
         <div className="circadian-plan-container">
             <div className="plan-header">
                 <h2>{plan.planName}</h2>
-                <p>A daily schedule to align with your natural rhythm.</p>
-                <button onClick={onReset} className="secondary-button">Generate New Plan</button>
+                <p>Un horario diario para alinearse con tu ritmo natural.</p>
+                <button onClick={onReset} className="secondary-button">Generar Nuevo Plan</button>
             </div>
 
             <div className="sleep-schedule">
-                <h3>Ideal Sleep Schedule</h3>
+                <h3>Horario de Sueño Ideal</h3>
                 <div className="sleep-times">
-                    <div>Bedtime: <span>{plan.idealSleepSchedule.bedtime}</span></div>
-                    <div>Wake up: <span>{plan.idealSleepSchedule.wakeupTime}</span></div>
+                    <div>Hora de dormir: <span>{plan.idealSleepSchedule.bedtime}</span></div>
+                    <div>Despertar: <span>{plan.idealSleepSchedule.wakeupTime}</span></div>
                 </div>
             </div>
 
@@ -36,7 +36,7 @@ export const CircadianPlan = ({ plan, onReset }: CircadianPlanProps) => {
             </div>
 
             <div className="sleep-tips">
-                <h3>Sleep Hygiene Tips</h3>
+                <h3>Consejos de Higiene del Sueño</h3>
                 <ul>
                     {plan.sleepHygieneTips.map((tip, index) => (
                         <li key={index}>{tip}</li>

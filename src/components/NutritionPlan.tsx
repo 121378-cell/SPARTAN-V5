@@ -22,7 +22,7 @@ export const NutritionPlan = ({ plan, onReset }: NutritionPlanProps) => {
             const recipe = await generateRecipe(meal, plan);
             setSelectedRecipe(recipe);
         } catch (error: any) {
-            setRecipeError(error.message || 'Failed to generate recipe.');
+            setRecipeError(error.message || 'Error al generar la receta.');
         } finally {
             setIsLoadingRecipe(false);
         }
@@ -38,15 +38,15 @@ export const NutritionPlan = ({ plan, onReset }: NutritionPlanProps) => {
         <div className="nutrition-plan-container">
             <div className="plan-header">
                 <h2>{plan.planName}</h2>
-                <button onClick={onReset} className="secondary-button">Generate New Plan</button>
+                <button onClick={onReset} className="secondary-button">Generar Nuevo Plan</button>
             </div>
 
             <div className="nutrition-summary">
-                <h4>Daily Goal: ~{plan.dailyCalories} kcal</h4>
+                <h4>Objetivo Diario: ~{plan.dailyCalories} kcal</h4>
                 <div className="macros">
-                    <div className="macro-item">Protein: <span>{plan.macronutrients.proteinGrams}g</span></div>
-                    <div className="macro-item">Carbs: <span>{plan.macronutrients.carbsGrams}g</span></div>
-                    <div className="macro-item">Fat: <span>{plan.macronutrients.fatGrams}g</span></div>
+                    <div className="macro-item">Proteína: <span>{plan.macronutrients.proteinGrams}g</span></div>
+                    <div className="macro-item">Carbohidratos: <span>{plan.macronutrients.carbsGrams}g</span></div>
+                    <div className="macro-item">Grasas: <span>{plan.macronutrients.fatGrams}g</span></div>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@ export const NutritionPlan = ({ plan, onReset }: NutritionPlanProps) => {
                                         onClick={() => handleViewRecipe(meal)}
                                         disabled={isLoadingRecipe && !selectedRecipe}
                                     >
-                                        View Recipe
+                                        Ver Receta
                                     </button>
                                 </div>
                                 <ul>
