@@ -1,7 +1,6 @@
 // Implemented Firebase initialization to resolve module loading errors.
-// FIX: Using Firebase v8 compatibility imports and syntax to resolve module loading errors.
-import firebase from "firebase/app";
-import "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAuth, Auth } from "firebase/auth";
 
 // --- ACTION REQUIRED ---
 // You must replace the placeholder values below with the configuration
@@ -30,9 +29,7 @@ export const isFirebaseConfigured = !firebaseConfig.apiKey.startsWith("REPLACE_W
 // The type assertion `as any` is safe because the app's root component
 // checks `isFirebaseConfigured` and will not render the rest of the app
 // if the config is missing, preventing this from being used.
-// FIX: Using Firebase v8 compatibility syntax for initialization.
-const app = isFirebaseConfigured ? firebase.initializeApp(firebaseConfig) : null as any;
+const app = isFirebaseConfigured ? initializeApp(firebaseConfig) : null as any;
 
 // Initialize Firebase Authentication and get a reference to the service
-// FIX: Using Firebase v8 compatibility syntax and types.
-export const auth: firebase.auth.Auth = isFirebaseConfigured ? firebase.auth() : null as any;
+export const auth: Auth = isFirebaseConfigured ? getAuth(app) : null as any;

@@ -1,13 +1,10 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-// FIX: Using Firebase v8 compatibility imports and types to resolve module loading errors.
-import firebase from 'firebase/app';
-import 'firebase/auth';
 import { auth } from '../services/firebase.ts';
+import { User, onAuthStateChanged, signOut } from 'firebase/auth';
 import { Spinner } from '../components/Spinner.tsx';
 
 interface AuthContextType {
-  // FIX: Using Firebase v8 User type.
-  currentUser: firebase.User | null;
+  currentUser: User | null;
   loading: boolean;
   logout: () => Promise<void>;
 }
@@ -27,13 +24,11 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  // FIX: Using Firebase v8 User type.
-  const [currentUser, setCurrentUser] = useState<firebase.User | null>(null);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // FIX: Using Firebase v8 onAuthStateChanged method from the auth instance.
-    const unsubscribe = auth.onAuthStateChanged(user => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
       setCurrentUser(user);
       setLoading(false);
     });
@@ -43,8 +38,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const logout = async () => {
     try {
-      // FIX: Using Firebase v8 signOut method from the auth instance.
-      await auth.signOut();
+      await signOut(auth);
     } catch (error) {
       console.error("Error signing out: ", error);
     }

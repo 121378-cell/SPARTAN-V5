@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-// FIX: Using Firebase v8 compatibility syntax. signInWithEmailAndPassword is a method on the auth instance.
-import 'firebase/auth';
 import { auth } from '../services/firebase.ts';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -14,8 +13,7 @@ export const Login = () => {
     setLoading(true);
     setError('');
     try {
-      // FIX: Using Firebase v8 signInWithEmailAndPassword method from the auth instance.
-      await auth.signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       // El onAuthStateChanged en AuthContext se encargará de la redirección
     } catch (err: any) {
       setError('Error al iniciar sesión. Verifica tus credenciales.');
