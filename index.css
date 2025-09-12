@@ -1,23 +1,23 @@
 /* Reset and Base Styles */
 :root {
-  --primary-color: #e63946;
-  --primary-hover-color: #d62839;
-  --secondary-color: #457b9d;
-  --background-color: #f1faee;
-  --card-background-color: #ffffff;
-  --text-color: #1d3557;
-  --light-text-color: #a8dadc;
-  --border-color: #e0e0e0;
-  --input-background-color: #f7f7f7;
-  --error-color: #c71f2f;
-  --spinner-color: #e63946;
-  --success-color: #2a9d8f;
-  --warning-color: #f4a261;
+  --primary-color: #3498db;
+  --primary-hover-color: #5dade2;
+  --secondary-color: #95a5a6;
+  --background-color: #16181a;
+  --card-background-color: #1f2225;
+  --text-color: #ecf0f1;
+  --light-text-color: #bdc3c7;
+  --border-color: #34495e;
+  --input-background-color: #2c3e50;
+  --error-color: #e74c3c;
+  --spinner-color: #3498db;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -44,6 +44,7 @@ body {
   align-items: center;
   height: 100vh;
   padding: 2rem;
+  background-color: #101214;
 }
 
 .login-title {
@@ -75,6 +76,7 @@ body {
 .login-label {
   margin-bottom: 0.5rem;
   font-weight: 500;
+  color: var(--light-text-color);
 }
 
 .login-input-group input {
@@ -83,13 +85,14 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   background-color: var(--input-background-color);
+  color: var(--text-color);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .login-input-group input:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
 }
 
 .login-button {
@@ -109,7 +112,7 @@ body {
 }
 
 .login-button:disabled {
-  background-color: #fca5ad;
+  background-color: #566573;
   cursor: not-allowed;
 }
 
@@ -123,7 +126,7 @@ body {
 .spinner {
   width: 24px;
   height: 24px;
-  border: 4px solid rgba(255, 255, 255, 0.3);
+  border: 4px solid rgba(255, 255, 255, 0.2);
   border-top-color: var(--spinner-color);
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -140,113 +143,28 @@ body {
   }
 }
 
-/* --- Dashboard Component --- */
-.dashboard-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 1rem;
-}
-
-.dashboard-header h1 {
-  color: var(--primary-color);
-  margin: 0;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logout-button {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
-  background-color: transparent;
-  color: var(--primary-color);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.logout-button:hover {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-/* Dashboard Tabs */
-.dashboard-tabs {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid var(--border-color);
-  flex-wrap: wrap;
-}
-
-.tab-button {
-  padding: 1rem 1.5rem;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--secondary-color);
-  position: relative;
-  transition: color 0.3s;
-  white-space: nowrap;
-}
-
-.tab-button:hover {
-  color: var(--primary-color);
-}
-
-.tab-button.active {
-  color: var(--primary-color);
-}
-
-.tab-button.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--primary-color);
-}
-
-
 /* --- Onboarding & Forms --- */
-.onboarding-container, .nutrition-onboarding-container, .circadian-onboarding-container, .wearable-onboarding-container, .longevity-onboarding-container {
-  background-color: var(--card-background-color);
-  border-radius: 12px;
-  padding: 2rem 3rem;
+.onboarding-container, .nutrition-onboarding-container, .circadian-onboarding-container, .wearable-onboarding-container, .longevity-onboarding-container, .overload-onboarding-container {
+  background-color: transparent; /* Let the modal background show */
+  padding: 0;
   max-width: 700px;
   margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.onboarding-container h2, .nutrition-onboarding-container h2, .circadian-onboarding-container h2, .wearable-onboarding-container h2, .longevity-onboarding-container h2 {
+.onboarding-container h2, .nutrition-onboarding-container h2, .circadian-onboarding-container h2, .wearable-onboarding-container h2, .longevity-onboarding-container h2, .overload-onboarding-container h2 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: var(--primary-color);
 }
 
-.onboarding-container p, .nutrition-onboarding-container p, .circadian-onboarding-container p, .wearable-onboarding-container p, .longevity-onboarding-container p {
+.onboarding-container p, .nutrition-onboarding-container p, .circadian-onboarding-container p, .wearable-onboarding-container p, .longevity-onboarding-container p, .overload-onboarding-container p {
   text-align: center;
   color: var(--secondary-color);
   margin-bottom: 2rem;
 }
 
-.onboarding-form, .nutrition-form, .circadian-form, .wearable-form, .longevity-form {
+.onboarding-form, .nutrition-form, .circadian-form, .wearable-form, .longevity-form, .overload-form {
   display: grid;
   gap: 1.5rem;
 }
@@ -271,6 +189,7 @@ body {
 .form-group label {
   margin-bottom: 0.5rem;
   font-weight: 500;
+  color: var(--light-text-color);
 }
 
 .form-group select, .form-group input {
@@ -279,13 +198,14 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   background-color: var(--input-background-color);
+  color: var(--text-color);
   width: 100%;
 }
 
 .form-group select:focus, .form-group input:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
 }
 
 .form-error {
@@ -314,7 +234,7 @@ body {
 }
 
 .primary-button:disabled {
-  background-color: #fca5ad;
+  background-color: #566573;
   cursor: not-allowed;
 }
 
@@ -337,6 +257,7 @@ body {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 2rem;
+  color: var(--primary-color);
 }
 
 .plan-header p {
@@ -370,7 +291,6 @@ body {
   background-color: var(--card-background-color);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border-color);
 }
 
@@ -379,6 +299,7 @@ body {
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.8rem;
   margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
 .day-card table {
@@ -397,7 +318,7 @@ body {
 }
 
 .day-card tbody tr:nth-child(even) {
-  background-color: var(--input-background-color);
+  background-color: #2c3e50;
 }
 
 .rest-day {
@@ -413,7 +334,7 @@ body {
 }
 
 .nutrition-summary {
-  background-color: var(--secondary-color);
+  background-color: #2c3e50;
   color: white;
   border-radius: 12px;
   padding: 1.5rem;
@@ -448,7 +369,6 @@ body {
     background-color: var(--card-background-color);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid var(--border-color);
 }
 
@@ -457,6 +377,7 @@ body {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.8rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 .meal {
@@ -491,7 +412,7 @@ body {
     padding: 0.25rem 0.6rem;
     font-size: 0.8rem;
     border: 1px solid var(--light-text-color);
-    color: var(--secondary-color);
+    color: var(--light-text-color);
     background-color: transparent;
     border-radius: 6px;
     cursor: pointer;
@@ -500,7 +421,7 @@ body {
 
 .tertiary-button:hover {
     background-color: var(--light-text-color);
-    color: white;
+    color: var(--background-color);
 }
 
 /* --- Recipe Modal --- */
@@ -519,7 +440,7 @@ body {
 }
 
 .recipe-modal-content {
-    background-color: white;
+    background-color: var(--card-background-color);
     padding: 2rem;
     border-radius: 12px;
     width: 90%;
@@ -528,6 +449,7 @@ body {
     overflow-y: auto;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     animation: slideIn 0.3s;
+    border: 1px solid var(--primary-color);
 }
 
 @keyframes slideIn {
@@ -602,7 +524,7 @@ body {
 }
 
 .sleep-schedule {
-    background-color: var(--secondary-color);
+    background-color: #2c3e50;
     color: white;
     border-radius: 12px;
     padding: 1.5rem;
@@ -629,6 +551,7 @@ body {
 .sleep-times span {
     font-weight: 700;
     font-size: 1.3rem;
+    color: var(--primary-hover-color);
 }
 
 .circadian-timeline {
@@ -643,7 +566,7 @@ body {
     top: 0;
     bottom: 0;
     width: 3px;
-    background-color: var(--light-text-color);
+    background-color: var(--border-color);
 }
 
 .timeline-item {
@@ -692,6 +615,7 @@ body {
 .sleep-tips h3 {
     margin-top: 0;
     text-align: center;
+    color: var(--primary-color);
 }
 
 .sleep-tips ul {
@@ -738,7 +662,6 @@ body {
     background-color: var(--card-background-color);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
@@ -756,10 +679,12 @@ body {
 .insight-card-header h4 {
     margin: 0;
     font-size: 1.2rem;
+    color: var(--primary-color);
 }
 
 .insight-card-header span { /* Icon */
     font-size: 1.5rem;
+    color: var(--primary-color);
 }
 
 .user-data {
@@ -826,6 +751,7 @@ body {
 .analysis-section h3 {
     text-align: center;
     margin-bottom: 1.5rem;
+    color: var(--primary-color);
 }
 
 .identified-areas-grid,
@@ -846,13 +772,13 @@ body {
     background-color: var(--card-background-color);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid var(--border-color);
 }
 
 .area-card h4 {
     margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
+    color: var(--primary-color);
 }
 
 .area-card p {
@@ -947,7 +873,6 @@ body {
     background-color: var(--card-background-color);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid var(--border-color);
 }
 
@@ -955,6 +880,7 @@ body {
     margin: 0 0 1rem 0;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.8rem;
+    color: var(--primary-color);
 }
 
 .metric-card .ai-analysis {
@@ -974,6 +900,7 @@ body {
 .recommendations-section h3 {
     text-align: center;
     margin-top: 0;
+    color: var(--primary-color);
 }
 
 .recommendations-list {

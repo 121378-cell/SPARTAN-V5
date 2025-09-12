@@ -12,9 +12,11 @@
     "react-dom": "^19.1.1",
     "react": "^19.1.1",
     "firebase": "^12.2.1",
-    "@google/genai": "^1.17.0"
+    "@google/genai": "^1.17.0",
+    "react-modal": "^3.16.1"
   },
   "devDependencies": {
+    "@types/react-modal": "^3.16.3",
     "@types/node": "^22.14.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
